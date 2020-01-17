@@ -1,0 +1,201 @@
+/*
+Website: Front End Development
+Author: Joke De Winter
+Author URI: https://www.jokedewinter.co.uk
+Description: A website about experimenting with front-end development.
+Version: 1.0
+*/
+
+
+/* Reset styles
+ * -------------------------------------------------------- */
+
+* { 
+	box-sizing: border-box; 
+	margin: 0;
+	padding: 0;
+}
+
+
+/* CSS custom properties
+ * -------------------------------------------------------- */
+
+:root {
+	--col-text: #3c3c3c;
+	--col-text-reverse: #ffffff;
+	--col-text-light: #bcbcbc;
+	--col-page: #fff;
+	--col-accent: #ffd400;
+	--col-pale: #f8f7f0;
+}
+
+
+/* Global styles
+ * -------------------------------------------------------- */
+
+html { font-size: 62.5%; }
+
+body {
+	width: 90%;
+	max-width: 75em;
+	margin: 3em auto;
+	
+	font-family: 'Red Hat Display', Helvetica, sans-serif;
+	font-size: 1.8rem;
+	line-height: 1.5;
+	
+	background-color: var(--col-page);
+	color: var(--col-text);
+}
+
+
+/* Typography
+ * -------------------------------------------------------- */
+
+h1 { 
+	font-size: 7.2rem;
+	font-weight: 900;
+	line-height: 1.2;
+}
+
+h2 { font-size: 2.4rem; }
+
+header p {
+	text-transform: uppercase;
+	letter-spacing: 1px;
+	font-size: 1.6rem;
+	font-weight: 900;
+	color: var(--col-text-light);
+}
+
+section > p {
+	max-width: 45%;
+	padding-bottom: 1em;
+}
+
+ol p {
+	font-size: 1.4rem;
+	font-weight: 900;
+	text-transform: uppercase;
+	letter-spacing: 1px;
+	margin-left: 2.3em;
+	padding-bottom: 0.3em;
+}
+
+
+/* Links
+ * -------------------------------------------------------- */
+
+a { 
+	text-decoration: none;
+	color: inherit; 
+}
+
+a:hover { color: var(--col-accent); }
+#wireframes a:hover { color: var(--col-text-reverse); }
+
+
+/* Images
+ * -------------------------------------------------------- */
+
+img {
+	width: auto;
+	max-width: 100%;
+	height: auto;
+	border: 1px solid var(--col-text-light);
+}
+
+
+/* Grid layout
+ * -------------------------------------------------------- */
+
+body {
+	display: grid;
+	grid-template-columns: repeat(5, 1fr);
+	grid-column-gap: 2em;
+	grid-row-gap: 10em;
+}
+
+body > * {
+	position: relative;
+	z-index: 100;
+}
+
+body > * > * {
+	position: relative;
+	z-index: 100;
+}
+
+header 		{ grid-column: 3 / -1; }
+#wireframes	{ grid-column: 1 / 4; grid-row-start: 2; }
+#demos	 	{ grid-column: 2 / -1; }
+#content	{ grid-column: 3 / -1; }
+footer		{ grid-column: 3 / -1; }
+
+
+/* Section layout
+ * -------------------------------------------------------- */
+
+ol {
+	margin: 1em 0;
+	display: grid;
+	grid-auto-flow: dense;
+	grid-gap: 2em;
+}
+
+#wireframes ol { grid-template-columns: repeat(auto-fill, minmax(20%, 1fr)); }
+#demos ol { 	grid-template-columns: repeat(auto-fill, minmax(15%, 1fr)); }
+
+
+/* Custom numbers on the numbered lists
+ * -------------------------------------------------------- */
+  
+ol {
+	list-style-type: none;
+	counter-reset: li-counter;
+}
+
+ol li {	display: block; }
+ol > li{ position: relative; }
+
+ol > li:before {
+	position: absolute;
+	top: 0.2em;
+
+	font-size: 1.4rem;
+	font-weight: 900;
+	line-height: 1;
+
+	content: "0" counter(li-counter) " / ";
+	counter-increment: li-counter;
+}
+
+
+/* Background shapes
+ * -------------------------------------------------------- */
+
+#wireframes::before,
+#demos::before {
+	content: "";
+	display: block;
+	width: 80vw;
+	height: calc(100% + 4em);
+	position: absolute;
+	top: -2em;
+	z-index: 50;
+}
+
+#wireframes::before {
+	left: -25vw;
+	background-color: var(--col-accent);
+}
+
+#demos::before {
+	left: -2em;
+	right: -25vw;
+	background-color: var(--col-pale);
+}
+
+
+
+

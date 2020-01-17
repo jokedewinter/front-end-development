@@ -1,0 +1,375 @@
+/*
+Website: Randomness
+Author: Joke De Winter
+Author URI: https://www.jokedewinter.co.uk
+Description: One page website about randomness. Following the Hero viewport wireframe design.
+Version: 1.0
+
+
+Each section of the page (hero, about, history) displays using the full viewport height 
+when the browser window is big enough. On smaller screens the content will overflow.
+*/
+
+
+/* Reset styles
+ * -------------------------------------------------------- */
+
+* { 
+	box-sizing: border-box; 
+	margin: 0;
+	padding: 0;
+}
+
+/* CSS custom properties
+ * -------------------------------------------------------- */
+
+:root {
+	--col-text: #342f49;
+	--col-text-reverse: #ececec;
+	--col-accent: #342f49;
+	--col-accent-light: #9cadcf;
+}
+
+
+/* Global styles
+ * -------------------------------------------------------- */
+
+html { font-size: 62.5%; }
+
+body {
+	font-family: 'Montserrat', Helvetica, sans-serif;
+	font-size: 1.6rem;
+	line-height: 1.5;
+	color: color: var(--col-text);
+	overflow-x: hidden;
+}
+
+
+/* Typography
+ * -------------------------------------------------------- */
+
+h1 {
+	font-size: 1.4rem;
+	text-transform: uppercase;
+	letter-spacing: 1px;
+}
+
+.site__header h1 {
+	font-size: 1.6rem;
+	text-transform: uppercase;
+	letter-spacing: 1px;
+	color: var(--col-accent-light);
+}
+
+h2 { 
+	font-size: 4.0rem; 
+	font-weight: 900;
+	line-height: 1.2;
+	padding-bottom: 0.5em;
+}
+
+.hero h2 {
+	max-width: 80%;
+	font-size: 7rem;
+	font-weight: 300;
+}
+
+h3 {
+	font-size: 2.4rem;
+	padding-bottom: 1em;
+}
+
+h4 {
+	font-size: 1.8rem;
+	padding-bottom: 0.5em;
+}
+
+p { padding-bottom: 0.5em; }
+.hero p { font-size: 3rem; }
+footer p { font-size: 1.4rem; }
+
+
+@media screen and ( max-width: 37.49em ) {
+	
+	.hero h2 { font-size: 4.5rem; }
+	.hero p { font-size: 2.0rem; }
+}
+
+
+/* Links
+ * -------------------------------------------------------- */
+
+a { 
+	color: inherit; 
+	text-decoration: none;
+	border-bottom: 2px solid var(--col-text);
+}
+
+a:hover { border-bottom-color: var(--col-accent-light); }
+
+
+/* Images
+ * -------------------------------------------------------- */
+
+img {
+	max-width: 100%;
+	height: auto;
+	display: block;
+}
+
+
+/* Utilities
+ * -------------------------------------------------------- */
+
+.wrapper {
+	width: 90%;
+	max-width: 90em;
+	margin: 0 auto;
+}
+
+.arrow {
+	display: block;
+	font-size: 5.0rem;
+	font-weight: 300;
+	line-height: 1;
+	text-align: center;
+	width: 50px;
+	height: 50px;
+	background-color: var(--col-accent-light);
+	border-radius: 100%;
+}
+
+.arrow:hover {
+	color: var(--col-accent);
+	background-color: var(--col-text-reverse);
+	border-bottom: none;
+}
+
+.no-bullets {
+	list-style-type: none;
+	padding: 0;
+}
+
+.underline::after {
+	content: "";
+	display: block;
+	width: 3em;
+	margin: 1em 0 4em 0;
+	border-bottom: 2px solid var(--col-text);
+}
+
+/*
+ * Hiding text for the screen, but still leave it readable for screen readers.
+ * URL: https://css-tricks.com/places-its-tempting-to-use-display-none-but-dont/
+ */
+.screen-reader-only {
+	position: absolute; 
+	overflow: hidden; 
+	clip: rect(0 0 0 0);
+	width: 1px;	
+	height: 1px; 
+	margin: -1px; 
+	padding: 0; 
+	border: 0; 
+}
+
+
+/* Header + Navigation
+ * -------------------------------------------------------- */
+
+.site__header {
+	position: relative;
+	z-index: 100;
+	padding-top: 1em;
+}
+
+nav a {
+	font-size: 1.4rem;
+	letter-spacing: 1px;
+	text-decoration: none;
+	text-transform: uppercase;
+	color: var(--col-text-reverse);
+}
+
+
+@media screen and ( max-width: 37.49em ) {
+	
+	nav { margin-top: 1em; }
+	nav ul { width: 10em; }
+	
+	nav ul li {
+		padding: 0.1em 0;
+		border-bottom: 1px solid var(--col-text-reverse);
+	}
+}
+
+@media screen and ( min-width: 37.50em ) {
+
+	/*
+	Fixing the header and navigation at the top of the screen.
+	This will keep it there even when scrolling.
+	*/
+	.fixed {
+		position: fixed;
+		width: 100vw;
+		top: 0;
+		left: 50%;
+		right: 50%;
+		margin: 0 -50vw;
+		padding-bottom: 1em;
+		z-index: 100;
+		background-color: var(--col-text);
+	}
+	
+	.site__header,
+	nav ul {
+		display: flex;
+		justify-content: space-between;
+	}
+	
+	nav ul li { padding: 0 1em; }
+}
+
+
+/* Hero
+ * -------------------------------------------------------- */
+
+.hero {
+	position: relative;
+	width: 100vw;
+	height: calc(100vh + 5.5em);
+	left: 50%;
+	right: 50%;
+	margin: 0 -50vw;
+	z-index: 90;
+	
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+
+	background-color: var(--col-text);
+	color: var(--col-text-reverse);
+}
+
+.hero .wrapper > * {
+	position: relative;
+	z-index: 100;
+}
+
+@media screen and ( max-width: 37.49em ) {
+	
+	.hero { margin-top: -7em; }
+}
+
+
+/* About
+ * -------------------------------------------------------- */
+
+#about {
+	/* 
+	To give a little breathing space above the content
+	after using the anchor links.
+	*/
+	padding-top: 5em;
+}
+
+@media screen and ( min-width: 37.50em ) {
+	
+	#about {
+		position: relative;
+		z-index: 99;
+		margin-top: -10em;
+		height: 100vh;
+	
+		display: grid;
+		grid-template-columns: 35% 50%;
+		grid-template-rows: repeat(2, 1fr);
+		grid-column-gap: 15%;
+	}
+	
+	#about .text {
+		grid-column: 1 / 2;
+		grid-row: -1 / 2;
+		align-self: flex-end;
+		margin-bottom: 2em;
+	}
+	
+	#about figure {
+		grid-column: -1 / 2;
+		grid-row: 1 / -1;
+	}
+	
+	#about img {
+		/*
+		To keep the image within the confines of the viewport.
+		With a little margin below the image.
+		This overrides the general image settings.
+		I want the image to be the full height of the available space, 
+		rather than the full width.
+		*/
+		max-width: none;
+		height: calc(100vh - 6em);
+	}
+}
+
+
+/* History
+ * -------------------------------------------------------- */
+
+#history { padding-top: 5em; }
+
+#history .text {
+	column-count:2;
+	column-gap: 2em;
+	margin-bottom: 2em;
+}
+
+.text h1 { column-span: all; }
+
+#history figure {
+	display: grid;
+	grid-template-columns: repeat(2, 1fr);
+	grid-gap: 2em;
+}
+
+#history figure img:nth-of-type(-n+2) {
+	/* 
+	Position the images on the first row near the bottom of the container.
+	This avoids an ugly gap if one of the images is much shorter.
+	*/
+	align-self: flex-end;
+}
+
+@media screen and ( min-width: 50em ) {
+
+	#history {
+		display: grid;
+		grid-template-columns: 60% 30%;
+		grid-column-gap: 10%;
+	}
+	
+	#history > * { align-self: flex-end; }
+}
+
+
+/* Footer
+ * -------------------------------------------------------- */
+
+footer { margin: 5em 0 2em 0; }
+footer .text { margin-bottom: 1em; }
+
+footer ul li {
+	display: inline-block;
+	margin-right: 0.5em;
+}
+
+footer ul li a {
+	display: block;
+	width: 32px;
+	height: 32px;
+	border-bottom: none;
+}
+
+.twitter { background-image: url('../images/twitter.svg'); }
+.facebook { background-image: url('../images/facebook.svg'); }
+.pinterest { background-image: url('../images/pinterest.svg'); }

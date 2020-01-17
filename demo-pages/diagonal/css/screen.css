@@ -1,0 +1,305 @@
+/*
+Website: Randomness
+Author: Joke De Winter
+Author URI: https://www.jokedewinter.co.uk
+Description: One page website about randomness. Following the Diagonal wireframe design.
+Version: 1.0
+
+The diagonal design is only visible on viewports exceeding 1120px in width. 
+When a viewport is smaller than that the diagonal stuff doesn't work very well.
+To make up for it, there are some steps building up to it, with a little rejig
+of the grid elements. 
+*/
+
+
+/* Reset styles
+ * -------------------------------------------------------- */
+
+* { 
+	box-sizing: border-box; 
+	margin: 0;
+	padding: 0;
+}
+
+
+/* Global styles
+ * -------------------------------------------------------- */
+
+html { font-size: 62.5%; }
+
+body {
+	font-family: 'Red Hat Display', Helvetica, sans-serif;
+	font-size: 1.6rem;
+	line-height: 1.5;
+	color: #3c3c3c;
+	
+	/* 
+	Once the diagonality kicks in the browser will get scroll bars for left/right.
+	This stops that. Everything that falls outside the viewport is hidden.
+	No one can get to it ... unless you widen your viewport.
+	*/
+	overflow-x: hidden;
+}
+
+
+/* Typography
+ * -------------------------------------------------------- */
+
+h1,
+h2 { 
+	line-height: 1.2; 
+	padding-bottom: 0.3em;
+}
+
+/*
+Fluid typography.
+The font size will be generated magically depending on the viewport width.
+
+font-size: calc([min size] + ([max size] - [min size]) * ((100vw - [min viewport width]) / ([max viewport width] - [min viewport width]))
+);
+*/	
+
+h1 { font-size: calc(35px + (50 - 35) * ((100vw - 300px) / (1800 - 300))); }
+h2 { font-size: calc(16px + (24 - 16) * ((100vw - 300px) / (1800 - 300))); }
+p  { font-size: calc(14px + (20 - 14) * ((100vw - 300px) / (1800 - 300))); }
+
+.site__header h1 {
+	font-size: 1.4rem;
+	text-transform: uppercase;
+	letter-spacing: 1px;
+}
+
+p { padding-bottom: 0.5em; }
+.content__header p { font-size: 2rem; }
+.site__footer p { font-size: 1.4rem; }
+
+
+/* Links
+ * -------------------------------------------------------- */
+
+a { color: inherit; }
+a:hover { color: #bcbcbc; }
+
+
+/* Images
+ * The image needs to fill the grid container without 
+ * leaving white gaps. Object fit does the job.
+ * -------------------------------------------------------- */
+
+img {
+	max-width: none;
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+}
+
+
+/* Utilities
+ * -------------------------------------------------------- */
+
+.no-bullets {
+	list-style-type: none;
+	padding: 0;
+}
+
+/*
+ * Hiding text for the screen, but still leave it readable for screen readers.
+ * URL: https://css-tricks.com/places-its-tempting-to-use-display-none-but-dont/
+ */
+.screen-reader-only {
+	position: absolute; 
+	overflow: hidden; 
+	clip: rect(0 0 0 0);
+	width: 1px;	
+	height: 1px; 
+	margin: -1px; 
+	padding: 0; 
+	border: 0; 
+}
+
+
+/* Header + Footer
+ * -------------------------------------------------------- */
+
+.site__header,
+.site__footer { margin: 1em 2em; }
+
+.site__footer { 
+	float: right;
+	width: 15em;
+	text-align: right;
+}
+
+.site__footer ul li {
+	display: inline-block;
+	margin-left: 0.5em;
+}
+
+.site__footer ul li a {
+	display: block;
+	width: 32px;
+	height: 32px;
+}
+
+.twitter { background-image: url('../images/twitter.svg'); }
+.facebook { background-image: url('../images/facebook.svg'); }
+.pinterest { background-image: url('../images/pinterest.svg'); }
+
+
+/* Grid layout / mobile
+ * -------------------------------------------------------- */
+
+main { margin: 1em 2em; }
+
+@media screen and ( min-width: 20em ) {
+	
+	main {	
+		display: grid;
+		grid-gap: 2em;
+		
+		/*
+		Using fr units doesn't work on narrow viewports, 
+		because it takes the fr width as the width of the largest content.
+		And that is the size of the main title.
+		*/
+		grid-template-columns: repeat(2, calc(50% - 1em));
+	
+		/*
+		The grid units need to be square and the row height needs to 
+		equal the column width height.
+		Found a complicated calculation to make that work here:
+		https://css-irl.info/aspect-ratio-cells/
+		
+		100vw: width of the viewport
+		4em: total margin left and right on the main element
+		1: number of gutters (there are two columns)
+		2em: width of the gutter (grid-gap)
+		2: number of columns
+		
+		auto is to make sure that on small viewports the grid cell
+		grows vertically to accomodate longer text.
+		*/
+		grid-auto-rows: minmax(calc((100vw - 4em - (1 * 2em)) / 2), auto);
+	}
+}
+
+
+@media screen and ( min-width: 32em ) {
+
+	main {
+		/*
+		The viewport should be sufficiently wide now to allow
+		for proper square grid cells.
+		*/
+		grid-auto-rows: calc((100vw - 4em - (1 * 2em)) / 2);
+	}
+}
+
+/* Utility classes for individual grid items
+ * -------------------------------------------------------- */
+
+.position_bottom,
+.position_center {
+	display: flex;
+	flex-direction: column;
+}
+
+.position_bottom { justify-content: flex-end; }
+
+@media screen and ( max-width: 49.99em ) {
+
+	.wide {  grid-column: span 2; }
+	.square { grid-row: span 2; }
+	
+	.position_center { justify-content: center; }	
+}
+
+
+/* Grid layout / middle ground
+ * -------------------------------------------------------- */
+
+@media screen and ( min-width: 50em ) {
+
+	main {
+		grid-template-columns: repeat(7, 1fr);
+		/*
+		No row settings because it gets to messy.
+		Instead adjusting the cells to look attractive at this width.
+		*/
+	}
+	
+	.block_01 { grid-column: 1 / 4; grid-row: 1 / 2; }
+	.block_02 { grid-column: 1 / 4; grid-row: 2 / 3; }
+	.block_03 { grid-column: 4 / 6; grid-row: 1 / 3; }
+	.block_04 { grid-column: 6 / 8; grid-row: 2 / 4; }
+	.block_05 { grid-column: 4 / 6; grid-row: 3 / 4; }
+	.block_06 { grid-column: 3 / 5; grid-row: 4 / 5; }
+	.block_07 { grid-column: 5 / 8; grid-row: 4 / 5; }
+	.block_08 { grid-column: 1 / 4; grid-row: 5 / 6; }
+	.block_09 { grid-column: 4 / 7; grid-row: 5 / 6; }
+	.block_10 { grid-column: 5 / 8; grid-row: 6 / 7; }
+	.block_11 { grid-column: 1 / 3; grid-row: 4 / 5; }
+	.block_12 { grid-column: 1 / 4; grid-row: 3 / 4; }
+	.block_13 { grid-column: 1 / 3; grid-row: 6 / 8; }
+	.block_14 { grid-column: 3 / 5; grid-row: 6 / 7; }
+	.block_15 { grid-column: 3 / 6; grid-row: 7 / 8; }
+	
+	/*
+	Turning some grid cells to display vertical.
+	https://labs.jensimmons.com/2016/workshop/writingmode-2C.html
+	*/
+	.vertical {
+		writing-mode: vertical-rl;
+		transform: rotate(-180deg);
+	}
+}
+
+
+/* Grid layout / large viewport
+ * -------------------------------------------------------- */
+
+@media screen and ( min-width: 70em ) {	
+	
+	main {
+		grid-template-columns: repeat(7, 1fr);		
+		/*
+		The 250px max height was decided after trial and error.
+		No fancy reasoning, it just works with that height.
+		*/
+		grid-auto-rows: minmax(calc((100vw - 4em - (6 * 2em)) / 7), 250px);
+		
+		transform: rotate(35deg);
+		margin-top: -5%;
+		margin-left: -25%;
+	}
+	
+	.block_01 { grid-column: 1 / 3; grid-row: 2 / 4; }
+	.block_02 { grid-column: 1 / 3; grid-row: 4 / 5; }
+	.block_03 { grid-column: 3 / 5; grid-row: 1 / 3; }
+	.block_04 { grid-column: 5 / 6; grid-row: 2 / 3; }
+	.block_05 { grid-column: 4 / 6; grid-row: 3 / 4; }
+	.block_06 { grid-column: 4 / 5; grid-row: 4 / 5; }
+	.block_07 { grid-column: 5 / 6; grid-row: 4 / 5; }
+	.block_08 { grid-column: 4 / 6; grid-row: 5 / 6; }
+	.block_09 { grid-column: 6 / 8; grid-row: 5 / 6; }
+	.block_10 { grid-column: 6 / 8; grid-row: 3 / 5; }
+	.block_11 { grid-column: 3 / 4; grid-row: 4 / 6; }
+	.block_12 { grid-column: 3 / 4; grid-row: 3 / 4; }
+	.block_13 { grid-column: 4 / 5; grid-row: 6 / 7; }
+	.block_14 { grid-column: 5 / 7; grid-row: 6 / 7; }
+	.block_15 { grid-column: 4 / 6; grid-row: 7 / 9; }
+}
+
+@media screen and ( min-width: 105em ) {
+
+	main {		
+		grid-auto-rows: calc((100vw - 4em - (6 * 2em)) / 7);
+		/* 
+		Because the rows don't have a max height, the margin needs
+		to be put back to 2em. A percentage margin does not play 
+		nice at all with the calculation above.
+		*/
+		margin-left: 2em;
+	}
+}
+

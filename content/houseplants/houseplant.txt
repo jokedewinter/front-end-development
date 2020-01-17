@@ -1,0 +1,50 @@
+Houseplant
+
+houseplant [ hous-plant, -plahnt ]
+
+noun
+1. an ornamental plant that is grown indoors or adapts well to indoor culture.
+---
+https://en.wikipedia.org/wiki/Houseplant
+---
+A houseplant is a plant that is grown indoors, such as residences and offices, namely for decorative purposes. Studies have also shown them to have positive psychological effects and as well as help with indoor air purification, since some species, and the soil-dwelling microbes associated with them, reduce indoor air pollution by absorbing volatile organic compounds including benzene, formaldehyde, and trichloroethylene. While generally toxic to humans, such pollutants are absorbed by the plant and its soil-dwelling microbes without harm. Common houseplants are usually tropical or semi-tropical epiphytes, succulents or cacti. Houseplants need the correct moisture, light levels, soil mixture, temperature, and humidity. As well, houseplants need the proper fertilizer and correct-sized pots.
+---
+Plant requirements
+
+Major factors that should be considered when caring for houseplants are moisture, light, soil mixture, temperature, humidity, fertilizers, potting, and pest control. The following includes some general guidelines for healthy houseplant care. Detailed plant care information can be found in many sources such as the internet and in books.
+
+Moisture
+Both under-watering and over-watering can be detrimental to a houseplant. Different species of houseplants require different soil moisture levels. Brown crispy tips on a plant's leaves are a sign that the plant is under-watered. Yellowing leaves can show that the plant is overwatered. House plants need drainage in the pots because if the water builds up at the bottom of the pot, mold and root rot can occur.
+
+Light
+Different plants require different amounts of light, for different durations. Photoperiodism is a consideration, since some plants such as Poinsettia and Schlumbergera are influenced by either decreasing or increasing daylight hours. It is possible to supplement window light with artificial lighting of suitable wavelengths.
+
+Soil
+Houseplants are generally grown in specialized soils called potting compost or potting soil, not in local natural soil. A good potting compost mixture includes soil conditioners to provide the plant with nutrients, support, adequate drainage, and proper aeration. Most potting composts contain a combination of peat and vermiculite or perlite. Concern over environmental damage to peat bogs, however, is leading to the replacement of peat by coir (coconut fibre), which is a sustainable resource. Sterilised soil can also be used.
+
+Temperature
+Most houseplants are tropical evergreen species that adapted to survive in a tropical climate which ranges from 15 °C to 25 °C (60 °F to 80 °F) year-round. This is similar to the temperature in most homes.
+
+Humidity
+Humidity is slightly more difficult to control than temperature. However, most species of houseplant will tolerate low humidity environments if it’s watered regularly. Homes are often around 20% to 60% relative humidity. Such a range is acceptable, although most species thrive near 80% relative humidity. Indoor plants also give off moisture into the air generally raising the relative humidity in the room. To increase humidity one may mist plants with distilled water or use a humidifier.
+
+Fertilizers
+Plants require soil minerals, mainly nitrate, phosphate, and potassium. Nitrogen is essential for green, leafy growth. Houseplants do not have a continuous feed of nutrients unless they are fertilized regularly. Phosphorus is essential for flowering or fruiting plants. Potassium is essential for strong roots and increased nutrient uptake. Minor and trace elements, such as calcium, magnesium and iron, may also be necessary. When using fertilizers for nutrients sources advise you to use an organic fertilizer with indoor potted plants because synthetic fertilizers pose a risk to burn or harm your plant.
+
+Pot types and sizes
+Proper pot size is an important factor to consider. A pot that is too large will cause root disease because of the excess moisture retained in the soil, while a pot that is too small will restrict a plant's growth. Generally, a plant can stay in the same pot for two or so years. Pots come in a variety of types as well, but usually can be broken down into two groups: porous and non-porous. Porous pots are usually clay and are highly recommended because they provide better aeration as air passes laterally through the sides of the pot. Non-porous pots such as glazed or plastic pots tend to hold moisture longer and restrict airflow. Another needed feature is the drainage holes. Usually, pots come with holes in the bottom to allow excess water to flow out of the soil which helps to prevent root rot. If a pot does not have drainage holes, it is best to double pot that plant so the inner pot can be lifted out and the excess water accumulated in the bottom of the outer pot can be removed. Soak old pots thoroughly in a solution of one part bleach to ten parts water to kill any bacteria that may remain.
+---
+Psychological effects
+
+A 2015 study showed that active interaction with houseplants "can reduce physiological and psychological stress compared with mental work."A critical review of the experimental literature concluded "The reviewed studies suggest that indoor plants can provide psychological benefits such as stress-reduction and increased pain tolerance. However, they also showed substantial heterogeneity in methods and results. We therefore have strong reservations about general claims that indoor plants cause beneficial psychological changes. It appears that benefits are contingent on features of the context in which the indoor plants are encountered and on characteristics of the people encountering them."
+
+The phenomenon of biophilia explains why houseplants have positive psychological effects. Biophilia describes humans’ subconscious need for a connection with nature. This is why humans are fascinated by natural spectacles such as waves or a fire. It also explains why gardening and spending time outdoors can have healing effects. Having plants in indoor living areas can have positive effects on physiological, psychological and cognitive health. There is an architectural design approach known as “complexity and order” that coincides with biophilic design. Complexity and order is defined as, “the presence of rich sensory information that is configured with a coherent spatial hierarchy, similar to the occurrence of design in nature.” Humans enjoy looking at things that are not boring but also not too complex. This design strategy is based on nature and human’s response to designs in nature. The presence of plants and nature-inspired designs is restorative and not dull like the modern cookie cutter designs.
+---
+Quotes
+https://www.azquotes.com
+
+We carry our house plants from one window to another to give them the proper heat, light, and moisture. Should we not be at least as careful of ourselves?
+William George Jordan
+
+Never go to a doctor whose office plants have died.
+Erma Bombeck

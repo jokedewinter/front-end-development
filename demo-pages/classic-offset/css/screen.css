@@ -1,0 +1,278 @@
+/*
+Website: Demonstration
+Author: Joke De Winter
+Author URI: https://www.jokedewinter.co.uk
+Description: One page website about demonstrations. Following the Classic offset wireframe design.
+Version: 1.0
+*/
+
+
+/* Reset styles
+ * -------------------------------------------------------- */
+
+* { 
+	box-sizing: border-box; 
+	margin: 0;
+	padding: 0;
+}
+
+
+/* CSS custom properties
+ * -------------------------------------------------------- */
+
+:root {
+	--col-text: #3c3c3c;
+	--col-text-reverse: #fff;
+	--col-accent: #d4534c;
+	--col-page: #fff;
+	--col-highlight: rgb(244, 242, 241);
+}
+
+
+/* Global styles
+ * -------------------------------------------------------- */
+
+html { font-size: 62.5%; }
+
+body {
+	font-family: 'Raleway', Helvetica, sans-serif;
+	font-size: 1.6rem;
+	line-height: 1.5;
+	
+	background-color: var(--col-page);
+	color: var(--col-text);
+}
+
+
+/* Typography
+ * -------------------------------------------------------- */
+
+h1 {
+	font-size: 1.4rem;
+	text-transform: uppercase;
+	letter-spacing: 1px;
+}
+
+h2 { 
+	font-size: 4rem; 
+	font-weight: 900;
+	line-height: 1;
+	padding-bottom: 0.5em;
+}
+
+h3 {
+	font-size: 2.4rem;
+	padding-bottom: 1em;
+}
+
+h4 {
+	font-size: 1.8rem;
+	padding-bottom: 0.5em;
+}
+
+p { padding-bottom: 0.5em; }
+.hero p { font-size: 2rem; }
+
+footer p { 
+	font-size: 1.4rem; 
+	line-height: 1.2;
+}
+
+blockquote p { 
+	font-size: 1.8rem;
+	font-style: italic; 
+	text-align: center;
+}
+
+
+/* Links
+ * -------------------------------------------------------- */
+
+a { color: inherit; }
+a:hover { color: var(--col-accent); }
+
+
+/* Images
+ * -------------------------------------------------------- */
+
+img {
+	max-width: 100%;
+	height: auto;
+	display: block;
+}
+
+
+/* Utilities
+ * -------------------------------------------------------- */
+
+.wrapper {
+	width: 90%;
+	max-width: 75em;
+	margin: 0em auto 2em auto;
+}
+
+.no-bullets {
+	list-style-type: none;
+	padding: 0;
+}
+
+/*
+ * Hiding text for the screen, but still leave it readable for screen readers.
+ * URL: https://css-tricks.com/places-its-tempting-to-use-display-none-but-dont/
+ */
+.screen-reader-only {
+	position: absolute; 
+	overflow: hidden; 
+	clip: rect(0 0 0 0);
+	width: 1px;	
+	height: 1px; 
+	margin: -1px; 
+	padding: 0; 
+	border: 0; 
+}
+
+
+/* Header
+ * -------------------------------------------------------- */
+
+header {
+	position: relative;
+	height: 30em;
+	padding: 1em 0;
+
+	background-image: url('../images/giacomo-ferroni-raU50Q_AcS0-unsplash.jpg');
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: center;
+	color: var(--col-text-reverse);
+}
+
+header::after {
+	content: "";
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	top: 0;
+	left: 0;
+	background-color: rgba(85, 111, 197, 0.5);
+	z-index: 90;
+}
+
+header > * {
+	position: relative;
+	z-index: 100;
+}
+
+.hero {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	height: 30em;
+	padding: 0 15%;
+}
+
+
+/* Main
+ * -------------------------------------------------------- */
+
+main {
+	position: relative;
+	margin: -5em auto 2em auto;
+	padding: 2em;
+	background-color: var(--col-page);
+	z-index: 100;
+}
+
+
+/* Text sections / .columns
+ * -------------------------------------------------------- */
+
+@media screen and ( min-width: 43.75em ) {
+		
+	.columns {
+		display: grid;
+		grid-template-columns: repeat(2, 45%);
+		grid-column-gap: 10%;
+	}
+		
+	.columns h3 { grid-column: 1 / 1; }
+	.columns p { grid-column: -1 / 2; }
+	.columns figure { grid-column: 1 / -1; }
+		
+	figcaption { align-self: flex-end; }
+	figcaption p { margin-bottom: 0; }
+}
+
+
+/* Quote / .full-width
+ * -------------------------------------------------------- */
+
+.full-width {
+	width: 100vw;
+	position: relative;
+	left: 50%;
+	right: 50%;
+	margin: 3em -50vw;
+	padding: 3em 0;
+	background-color: var(--col-highlight);
+}
+
+blockquote {
+	width: 90%;
+	max-width: 25em;
+	margin: 0em auto;
+}
+
+blockquote::before {
+	content: "";
+	background-image: url('../images/quote-staggered.svg');
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: contain;
+	display: block;
+	width: 100%;
+	height: 100px;
+	opacity: 0.3;
+}
+
+.author {
+	font-size: 1.4rem;
+	font-weight: 700;
+	font-style: normal;
+	text-transform: uppercase;
+	letter-spacing: 2px;
+	color: var(--col-accent);
+}
+
+
+/* Footer
+ * -------------------------------------------------------- */
+
+footer ul { margin-bottom: 1em; }
+
+footer ul li {
+	display: inline-block;
+	margin-right: 0.5em;
+}
+
+footer ul li a {
+	display: block;
+	width: 32px;
+	height: 32px;
+}
+
+.twitter { background-image: url('../images/twitter.svg'); }
+.facebook { background-image: url('../images/facebook.svg'); }
+.pinterest { background-image: url('../images/pinterest.svg'); }
+
+
+@media screen and ( min-width: 43.75em ) {
+	
+	.no-bullets { float: left; }
+
+	.text {
+		float: right;
+		text-align: right;
+	}
+}
